@@ -29,8 +29,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="https://docs.google.com/document/d/1g6iXquU_HWLoZ-4UMtLF15eXSdSYVK9ODTcBgvJks_4/edit">SEO</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="assets/tableau_synthese.xlsx">Compétences</a></li>
+						<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="https://docs.google.com/document/d/12Bv5YCoREVjNKd5u0EYb0sGliRtA9Zrn1Auyre77sIQ/edit">Journal</a></li>
                     </ul>
                 </div>
             </div>
@@ -42,7 +43,7 @@
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">Portfolio Mattéo SIMON</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -72,7 +73,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/projet.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 2-->
@@ -267,7 +268,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Mes Projets</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -275,10 +276,17 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/projet.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <p class="mb-4">Création d'un environnement pour réserver des salles. Installation de UwAmp, de MRBS, de Wordpress sous Windows et Debian. Mise en place de la base de données et création de backup.</p>
+									<p class="mb-4"><img class="img-fluid rounded mb-5" src="assets/img/portfolio/projets/reserv.png">
+									<p class="mb-4">Page du site MRBS où l'on peut réserver des salles</p>
+									<p class="mb-4"><img class="img-fluid rounded mb-5" src="assets/img/portfolio/projets/backup.png"/>
+									<p class="mb-4">On exporte la base de données pour avoir la sauvegarde de celle-ci donc s'il y a une erreur, on importe </p>
+									<p class="mb-4"><img class="img-fluid rounded mb-5" src="assets/img/portfolio/projets/wordpress.png"/>
+									<p class="mb-4">Installer Wordpress sur Debian avec la commande wget</p>
+                                    <p>
+									<button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Close Window
                                     </button>
