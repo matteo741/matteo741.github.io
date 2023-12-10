@@ -23,13 +23,13 @@ Pour utiliser la calculatrice il faut :
 
 # Licenses :
 
-Ce projet est sous la licence MIT, celle-ci est disponible dans les fichiers du répertoire.
+Ce projet est sous la licence MIT, celle-ci est disponible dans les fichiers du répertoire [MIT License](./LICENSE).
 
 # Fonctionalités :
 
 Une interface a été mise en place lors du démarrage du script : 
 
-<img title="Interfaces" src="/Images/Interface">
+![Calculator Screenshot](/Images/Interfaces.png)
 
   - Vous pouvez faire des : additions, soustractions, multiplications et des divisions.
   - Vous pouvez manipuler la stack : afficher, supprimer et dupliquer.
