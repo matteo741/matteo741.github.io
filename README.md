@@ -15,7 +15,6 @@ Pour utiliser la calculatrice il faut :
 
 ![Exemple Screenshot](Images/Exemple-Add.PNG)
 ![Exemple Screenshot](Images/Exemple2.PNG)
-![Exemple Screenshot](Images/Help.PNG)
 
 # Licenses :
 
@@ -30,6 +29,8 @@ Une interface a été mise en place lors du démarrage du script :
   - Vous pouvez faire des : additions, soustractions, multiplications et des divisions.
   - Vous pouvez manipuler la stack : afficher, supprimer et dupliquer.
   - Avec la commande 'help', afficher les commandes disponibles ainsi que les opérations.
+
+![Exemple Screenshot](Images/Help.PNG)
 
 # Avertissements : 
 
