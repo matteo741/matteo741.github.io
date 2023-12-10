@@ -11,15 +11,11 @@ Pour utiliser la calculatrice il faut :
   - Aller sur le répertoire et mettre les droits sur le fichier.
   - Utiliser la commande ./rpn.sh ou bash rpn.sh pour démarrer le script.
 
-# Usage :
-
-  -
-  -
-  -
-
 # Exemples :
 
-
+![Exemple Screenshot](Images/Exemple-Add.PNG)
+![Exemple Screenshot](Images/Exemple2.PNG)
+![Exemple Screenshot](Images/Help.PNG)
 
 # Licenses :
 
@@ -29,7 +25,7 @@ Ce projet est sous la licence MIT, celle-ci est disponible dans les fichiers du 
 
 Une interface a été mise en place lors du démarrage du script : 
 
-![Calculator Screenshot](Images/Interface.PNG)
+![Interface Screenshot](Images/Interface.PNG)
 
   - Vous pouvez faire des : additions, soustractions, multiplications et des divisions.
   - Vous pouvez manipuler la stack : afficher, supprimer et dupliquer.
