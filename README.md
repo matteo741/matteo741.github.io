@@ -18,7 +18,7 @@ Pour utiliser la calculatrice il faut :
 
 # Licenses :
 
-Ce projet est sous la licence MIT, celle-ci est disponible dans les fichiers du répertoire [MIT License](./LICENSE).
+Ce projet est sous la licence MIT, celle-ci est disponible dans les fichiers du répertoire [MIT License](./LICENSE.txt).
 
 # Fonctionalités :
 
