@@ -29,7 +29,7 @@ Ce projet est sous la licence MIT, celle-ci est disponible dans les fichiers du 
 
 Une interface a été mise en place lors du démarrage du script : 
 
-![Calculator Screenshot](/Images/Interfaces.png)
+![Calculator Screenshot](Images/Interface.PNG)
 
   - Vous pouvez faire des : additions, soustractions, multiplications et des divisions.
   - Vous pouvez manipuler la stack : afficher, supprimer et dupliquer.
