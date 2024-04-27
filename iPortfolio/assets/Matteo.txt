@@ -1,0 +1,172 @@
+#!/bin/bash
+
+declare -a stack
+
+help() {
+    echo "Commands:"
+    echo "  help: display this help message"
+    echo "  dump: display the contents of the stack"
+    echo "  drop: remove the top element from the stack"
+    echo "  exit, quit: exit the calculator"
+    echo "  swap: swap the top two elements on the stack"
+    echo "  dup: duplicate the stack"
+    echo "Operations:"
+    echo "  + or add: addition"
+    echo "  - or sub: subtraction"
+    echo "  * or mul: multiplication"
+    echo "  / or div: division"
+    echo "  sum: sum all elements on the stack"
+}
+
+dump() {
+    echo "Stack: ${stack[@]}"
+}
+
+drop() {
+    if [ ${#stack[@]} -gt 0 ]; then
+        unset 'stack[${#stack[@]}-1]'
+    else
+        echo "Error: Stack is empty"
+    fi
+}
+
+exit_calculator() {
+    echo "Exiting the calculator."
+    exit 0
+}
+
+swap() {
+    if [ ${#stack[@]} -ge 2 ]; then
+        tmp=${stack[${#stack[@]}-1]}
+        stack[${#stack[@]}-1]=${stack[${#stack[@]}-2]}
+        stack[${#stack[@]}-2]=$tmp
+    else
+        echo "Error: Not enough elements on the stack to swap"
+    fi
+}
+
+dup() {
+    if [ ${#stack[@]} -gt 0 ]; then
+        stack+=("${stack[${#stack[@]}-1]}")
+    else
+        echo "Error: Stack is empty"
+    fi
+}
+
+add() {
+    if [ ${#stack[@]} -ge 2 ]; then
+        result=$((stack[${#stack[@]}-1] + stack[${#stack[@]}-2]))
+        unset 'stack[${#stack[@]}-1]'
+        stack[${#stack[@]}-1]=$result
+    else
+        echo "Error: Not enough elements on the stack for addition"
+    fi
+}
+
+sub() {
+    if [ ${#stack[@]} -ge 2 ]; then
+        b=${stack[${#stack[@]}-1]}
+        a=${stack[${#stack[@]}-2]}
+        result=$((a - b))
+        unset 'stack[${#stack[@]}-1]'
+        stack[${#stack[@]}-1]=$result
+    else
+        echo "Error: Not enough elements on the stack for subtraction"
+    fi
+}
+
+mul() {
+    if [ ${#stack[@]} -ge 2 ]; then
+        result=$((stack[${#stack[@]}-1] * stack[${#stack[@]}-2]))
+        unset 'stack[${#stack[@]}-1]'
+        stack[${#stack[@]}-1]=$result
+    else
+        echo "Error: Not enough elements on the stack for multiplication"
+    fi
+}
+
+div() {
+    if [ ${#stack[@]} -ge 2 ]; then
+        b=${stack[${#stack[@]}-1]}
+        a=${stack[${#stack[@]}-2]}
+        if [ "$b" -ne 0 ]; then
+            result=$(echo "scale=5; $a / $b" | bc)
+            unset 'stack[${#stack[@]}-1]'
+            stack[${#stack[@]}-1]=$result
+        else
+            echo "Error: Division by zero"
+        fi
+    else
+        echo "Error: Not enough elements on the stack for division"
+    fi
+}
+
+process_input() {
+    read -a tokens -p ">>> "
+    for token in "${tokens[@]}"; do
+        if [[ "$token" =~ ^[0-9]+$ || ( "${token:0:1}" == '-' && "${token:1}" =~ ^[0-9]+$ ) ]]; then
+            stack+=("$token")
+        elif [ "$token" == "+" ] || [ "$token" == "add" ]; then
+            add
+        elif [ "$token" == "-" ] || [ "$token" == "sub" ]; then
+            sub
+        elif [ "$token" == "*" ] || [ "$token" == "mul" ]; then
+            mul
+        elif [ "$token" == "/" ] || [ "$token" == "div" ]; then
+            div
+        elif [ "$token" == "sum" ]; then
+            sum=0
+            for element in "${stack[@]}"; do
+                sum=$((sum + element))
+            done
+            stack=("$sum")
+        elif [ "$token" == "help" ]; then
+            help
+        elif [ "$token" == "dump" ]; then
+            dump
+        elif [ "$token" == "drop" ]; then
+            drop
+        elif [ "$token" == "exit" ] || [ "$token" == "quit" ]; then
+            exit_calculator
+        elif [ "$token" == "swap" ]; then
+            swap
+        elif [ "$token" == "dup" ]; then
+            dup
+        else
+            echo "Error: Unknown command or operator '$token'"
+        fi
+    done
+}
+
+show_menu() {
+    PS3="Select an option: "
+    options=("Start Calculator" "Help" "Quit")
+    select opt in "${options[@]}"; do
+        case $opt in
+            "Start Calculator")
+                echo "Starting the calculator..."
+                break
+                ;;
+            "Help")
+                help
+                ;;
+            "Quit")
+                exit_calculator
+                ;;
+            *) 
+                echo "Invalid option. Please select again."
+                ;;
+        esac
+    done
+}
+
+# Afficher la bannière avec figlet
+figlet "RPN Calculatrice"
+
+echo "RPN Calculator"
+show_menu
+
+echo "RPN Calculator. Type 'help' for a list of commands and operators."
+while true; do
+    process_input
+done
